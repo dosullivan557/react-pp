@@ -1,0 +1,29 @@
+name: Node.js Package
+
+on:
+  pull_request
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 19.3.0
+      - name: Install
+        run: npm install
+      - name: Test
+        run: npm run test
+      - name: Format
+        run: npm run format:verify
+      - name: Linting
+        run: npm run lint
+      - name: Check PR version
+        shell: bash
+        run: |
+          pr="$(jq -r '.version' < ./package.json)"
+          latest="$(npm view react-hooks-enhanced version)"
+          php -r 'if(version_compare("'"$pr"'","'"$latest"'",">")){exit(0);};exit(1);'
+
