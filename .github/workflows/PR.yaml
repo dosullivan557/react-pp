@@ -24,6 +24,6 @@ jobs:
         shell: bash
         run: |
           pr="$(jq -r '.version' < ./package.json)"
-          latest="$(npm view react-plus version)"
+          latest="$(npm view react-pp version)"
           php -r 'if(version_compare("'"$pr"'","'"$latest"'",">")){exit(0);};exit(1);'
 
