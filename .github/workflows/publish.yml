@@ -29,6 +29,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: cp package.json ./src && cp package-lock.json ./src && cd src && npm publish
+      - run: cp package.json ./src && cp package-lock.json ./src && cp README.md ./src && cp .npmignore ./src && cd src && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
