@@ -16,7 +16,7 @@
     "plugins": [
         "react"
     ],
-    "ignorePatterns": ["src/*.spec.js"],
+    "ignorePatterns": ["src/**/*.spec.js"],
 
     "rules": {
         
