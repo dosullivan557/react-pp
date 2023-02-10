@@ -23,7 +23,7 @@ npm install react-pp
 ### useToggle
 
 ```js
-import { useToggle } from "react-pp/hooks";
+import { useToggle } from "react-pp";
 function App() {
   const [value, toggleValue] = useToggle(false);
   return (
@@ -41,7 +41,7 @@ export default App;
 ### useAsyncHook
 
 ```js
-import { useAsyncHook } from "react-pp/hooks";
+import { useAsyncHook } from "react-pp";
 function App(props) {
   const [result, error, isLoading] = useAsyncHook(props.processData);
   if (isLoading) return <div>Loading...</div>;
@@ -61,7 +61,7 @@ export default App;
 
 ```js
 import React, { useState } from "react";
-import { useDebounce } from "react-pp/hooks";
+import { useDebounce } from "react-pp";
 
 const ExampleComponent = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -91,7 +91,7 @@ There are a few regular expressions built in. See below how to use. See [here](#
 
 ```js
 import React, { useState } from "react";
-import { useValidatedForm, regex } from "react-pp/hooks";
+import { useValidatedForm, regex } from "react-pp";
 
 function App() {
   const [value, setValue, isValid] = useValidatedForm(regex.emailAddress);
@@ -110,7 +110,7 @@ export default App;
 
 ```js
 import React, { useState } from "react";
-import { useFetch } from "react-pp/hooks";
+import { useFetch } from "react-pp";
 
 function App() {
   const [value, setValue, isValid] = useFetch("www.google.com", { a: 1 }, 'Accept':"*/*");
