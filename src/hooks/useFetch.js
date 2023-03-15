@@ -8,10 +8,10 @@ import useAsyncHook from './useAsyncHook';
  * @param {Object} headers - The headers of the request.
  * @returns {Array} An array containing the data, error, and loading state.
  */
-const useFetch = (url, body = null, headers = {}) => {
+const useFetch = (url, method = 'GET', body = null, headers = {}) => {
   const fetchData = async () => {
     const response = await fetch(url, {
-      method: 'GET',
+      method,
       headers: headers,
       body: body ? JSON.stringify(body) : null
     });
