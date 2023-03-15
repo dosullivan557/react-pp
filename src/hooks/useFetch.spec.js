@@ -23,7 +23,7 @@ describe('useFetch', () => {
     const headers = { 'Content-Type': 'application/json' };
     const body = { name: 'John Doe' };
 
-    const { result } = renderHook(() => useFetch(url, body, headers));
+    const { result } = renderHook(() => useFetch(url, undefined,body, headers));
     // Act
     await waitFor(() => {
       expect(result.current[2]).toEqual(false);
@@ -37,7 +37,7 @@ describe('useFetch', () => {
     const headers = { 'Content-Type': 'application/json' };
     const body = { name: 'John Doe' };
 
-    const { result } = renderHook(() => useFetch(url, body, headers));
+    const { result } = renderHook(() => useFetch(url, "POST",body, headers));
 
     await waitFor(() => {
       expect(result.current[2]).toEqual(false);
